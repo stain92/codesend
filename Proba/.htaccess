@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c >
+    RewriteEngine On
+    DirectoryIndex index.php
+    RewriteEngine on
+    RewriteCond $1 !^(index.php|robots.txt|file|favicon.ico)
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+
+</IfModule>
